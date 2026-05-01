@@ -10,7 +10,122 @@ load_dotenv()
 
 st.set_page_config(page_title="AI Wealth Manager", layout="wide", page_icon="🏦")
 
-st.title("🏦 AI Wealth Manager & Retirement Planner")
+# Premium Custom CSS
+st.markdown("""
+<style>
+    /* Global dark theme and typography */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .stApp {
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        color: #f8fafc;
+    }
+    
+    /* Header styling with animated gradient */
+    h1 {
+        background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700 !important;
+        font-size: 3.5rem !important;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        animation: pulse 2s infinite alternate;
+    }
+    
+    @keyframes pulse {
+        0% { opacity: 0.8; }
+        100% { opacity: 1; text-shadow: 0 0 20px rgba(79,172,254,0.5); }
+    }
+    
+    /* Subtitle styling */
+    .stMarkdown p {
+        font-size: 1.1rem;
+        color: #cbd5e1;
+        text-align: center;
+    }
+    
+    /* Sidebar styling - Glassmorphism */
+    [data-testid="stSidebar"] {
+        background: rgba(15, 23, 42, 0.6) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Inputs */
+    .stTextInput>div>div>input, .stNumberInput>div>div>input {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        transition: all 0.3s;
+    }
+    .stTextInput>div>div>input:focus, .stNumberInput>div>div>input:focus {
+        border-color: #4facfe;
+        box-shadow: 0 0 10px rgba(79,172,254,0.3);
+    }
+    
+    /* Selectbox */
+    .stSelectbox>div>div>div {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Buttons */
+    .stButton>button {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: #0f172a !important;
+        font-weight: 700;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(0,242,254,0.4);
+    }
+    .stButton>button:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(0,242,254,0.6);
+    }
+    
+    /* Metrics Cards */
+    [data-testid="metric-container"] {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    [data-testid="metric-container"]:hover {
+        transform: translateY(-5px);
+        border-color: rgba(79,172,254,0.5);
+    }
+    [data-testid="stMetricValue"] {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #00f2fe;
+    }
+    
+    /* Divider */
+    hr {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("<h1>🏦 AI Wealth Manager</h1>", unsafe_allow_html=True)
 st.markdown("Ultimate Agentic Financial Planning using **Monte Carlo Simulations** and **CrewAI**.")
 
 # --- SIDEBAR ---

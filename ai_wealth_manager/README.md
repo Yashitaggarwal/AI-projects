@@ -1,22 +1,53 @@
 # 🏦 AI Wealth Manager & Retirement Planner
 
-An "Ultimate Agentic" financial planning tool that combines hard mathematical forecasting (Monte Carlo Simulations) with an autonomous team of AI experts (CrewAI) to evaluate your retirement readiness.
+![AI Wealth Manager](https://img.shields.io/badge/AI-Wealth%20Manager-emerald?style=for-the-badge&logo=openai)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![CrewAI](https://img.shields.io/badge/CrewAI-Agentic%20Framework-blue?style=for-the-badge)
 
-## Features
-- **Monte Carlo Engine:** Uses `numpy` to run 1,000 simulations of market returns over your career, based on your risk profile, plotting the 10th, 50th, and 90th percentile trajectories.
-- **CrewAI Financial Team:** 
-  - **Tax Strategist:** Suggests tax-advantaged accounts and optimizations.
-  - **CFP:** Translates the math into a holistic behavioral assessment of your retirement trajectory.
-- **Beautiful UI:** Built with Streamlit and Plotly.
+The **AI Wealth Manager** is an enterprise-grade financial planning application that combines the rigorous mathematical precision of **Monte Carlo Simulations** with the cognitive reasoning capabilities of an **AI Agent Crew (CrewAI)** to provide holistic, hyper-personalized retirement and tax strategies.
 
-## Installation
-```bash
-pip install -r requirements.txt
+## ✨ Features
+- **Monte Carlo Projections**: Runs thousands of mathematical simulations using historical data and risk profiles to predict your portfolio trajectory to retirement.
+- **Agentic Analysis**: Uses **CrewAI** to spawn two expert agents:
+  1. A **Senior Tax & Wealth Strategist** (CPA/CFP equivalent)
+  2. A **Certified Financial Planner (CFP)**
+- **Stunning UI**: Features a premium, state-of-the-art dark-mode dashboard built with custom CSS, glassmorphism, and responsive micro-animations.
+
+## 🏗️ Architecture Flow
+
+```mermaid
+graph TD
+    A[User Profile Input] --> B[Monte Carlo Engine]
+    A --> C[CrewAI Coordinator]
+    
+    B -->|Generates 1,000 Simulations| D[P10, Median, P90 Projections]
+    D --> E[Streamlit Interactive Dashboard]
+    
+    C -->|Passes User Data & Projections| F[Agent 1: Tax Strategist]
+    F -->|Analyzes tax footprint| G[Agent 2: Certified Planner]
+    G -->|Translates to human advice| H[Comprehensive Wealth Report]
+    
+    H --> E
 ```
 
-## Usage
-1. Provide your Gemini API key in the `.env` file or directly in the sidebar.
-2. Run the app:
-```bash
-streamlit run app.py
-```
+## 💻 Tech Stack
+- **Frontend**: Streamlit (with Premium Custom CSS)
+- **Data & Math**: Python, NumPy, Pandas, Plotly (for stunning interactive graphs)
+- **AI Framework**: CrewAI
+- **LLM Engine**: Google Gemini Pro (via LangChain Google GenAI)
+
+## 🚀 Getting Started
+
+1. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. **Set Environment Variables**:
+   Create a `.env` file and add your `GEMINI_API_KEY`:
+   ```env
+   GEMINI_API_KEY=your_key_here
+   ```
+3. **Run the Application**:
+   ```bash
+   streamlit run app.py
+   ```
